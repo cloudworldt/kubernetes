@@ -43,6 +43,8 @@ sudo service docker start
 ```
 sudo docker run hello-world
 ```
+###### to verify the docker version use ```docker version``` CMD
+###### for socket error give the executable permission ```sudo chmod 777 /var/run/docker.sock```
 
 ##### Install Docker on Ubuntu With Single Line Command : POC
 
