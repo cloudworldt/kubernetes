@@ -78,6 +78,9 @@ docker ps
 ```
 docker exec -it < container name > /bin/sh
 ```
-
+7. Stop the container
+```
+docker stop < container name >
+```
 
 
