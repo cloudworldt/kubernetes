@@ -51,3 +51,29 @@ sudo docker run hello-world
 ##### Install Docker on Ubuntu With Single Line Command : POC
 
 ```sudo apt  install docker.io```  # version 20.10.12-0ubuntu2~20.04.1
+
+
+### Docker Practical 1] : Pull Official Image From Dockerhub & Run on your VM
+1. Using docker, pull the latest version of nginx
+```
+docker pull nginx
+```
+2. Verify that the image was pulled successfully
+```
+docker images
+```
+3. Run the container using the nginx image
+```
+docker run --name nginx -p 8080:80 -d nginx
+```
+4. Check the status of the container
+```
+docker ps
+```
+5. Verify connectivity to the nginx container through UI
+```
+< PUBLIC_IP_ADDRESS OF VM >:8080
+```
+
+
+
