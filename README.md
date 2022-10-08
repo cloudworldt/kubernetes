@@ -66,7 +66,7 @@ docker images
 ```
 docker run --name nginx -p 8080:80 -d nginx
 ```
-4. Check the status of the container
+4. Check the status of the Running container
 ```
 docker ps
 ```
