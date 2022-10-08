@@ -29,10 +29,17 @@ echo \
 ```
 ###### B. Install Docker Engine
 
-1. Update the apt package index, and install the latest version of Docker Engine, containerd, and Docker Compose
+* Update the apt package index, and install the latest version of Docker Engine, containerd, and Docker Compose
 ```
 sudo apt-get update
 ```
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+###### C. Verify that Docker Engine is installed correctly by running the hello-world image (optional)
+```
+sudo service docker start
+```
+```
+sudo docker run hello-world
 ```
