@@ -36,12 +36,12 @@ sudo apt-get update
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
-###### C. Verify that Docker Engine is installed correctly by running the hello-world image (optional)
+###### C. Verify that Docker Engine is installed correctly by running the hello-world image
 ```
 sudo service docker start
 ```
 ```
-sudo docker run hello-world
+sudo docker run hello-world (optional)
 ```
 ###### to verify the docker version use ```docker version``` CMD
 ###### for socket error give the executable permission ```sudo chmod 777 /var/run/docker.sock```
