@@ -1,7 +1,7 @@
 # Docker
 
 ### How to install Docker ?
-##### Install Docker on Ubuntu 
+##### Install Docker on Ubuntu : PROD
 ###### A. Set up the repository
 1. Update the apt package index and install packages to allow apt to use a repository over HTTPS
 ```
@@ -44,6 +44,6 @@ sudo service docker start
 sudo docker run hello-world
 ```
 
-##### Install Docker on Ubuntu With Single Line Command
+##### Install Docker on Ubuntu With Single Line Command : POC
 
 ```sudo apt  install docker.io```  # version 20.10.12-0ubuntu2~20.04.1
