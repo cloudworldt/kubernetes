@@ -100,4 +100,14 @@ c) push to your Docker hub Registry
 * Sign in to Docker Hub :  & create account
 <a href="https://hub.docker.com/">Docker Hub</a>
 
+* Run & Stop the Container
+```
+docker run --name nginx -p 8080:80 -d nginx
+```
+```
+docker ps
+```
+```
+docker stop nginx
+```
 
