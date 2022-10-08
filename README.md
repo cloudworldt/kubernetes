@@ -45,6 +45,8 @@ sudo docker run hello-world
 ```
 ###### to verify the docker version use ```docker version``` CMD
 ###### for socket error give the executable permission ```sudo chmod 777 /var/run/docker.sock```
+<img width="1439" alt="Screenshot 2022-10-08 at 4 20 55 PM" src="https://user-images.githubusercontent.com/103893307/194703847-e6b50338-eb2b-4ff5-959f-9f3bdae725c4.png">
+
 
 ##### Install Docker on Ubuntu With Single Line Command : POC
 
