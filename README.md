@@ -1,4 +1,4 @@
-# Docker : Author :- Rizwan
+# Docker : Documented By :- Rizwan
 
 ### How to install Docker ?
 ##### Install Docker on Ubuntu : PROD
