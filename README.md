@@ -43,3 +43,7 @@ sudo service docker start
 ```
 sudo docker run hello-world
 ```
+
+##### Install Docker on Ubuntu With Single Line Command
+
+```sudo apt  install docker.io```  # version 20.10.12-0ubuntu2~20.04.1
