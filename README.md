@@ -74,6 +74,10 @@ docker ps
 ```
 < PUBLIC_IP_ADDRESS OF VM >:8080
 ```
+6. access your docker container
+```
+docker exec -it < container name > /bin/sh
+```
 
 
 
