@@ -124,3 +124,19 @@ docker images
 ```
 docker run --name new_nginx -p 8081:80 -d <dockerhub_id>/nginx_doc:v1
 ```
+* Login To Dockerhub 
+```
+docker login
+```
+```provide USERNAME and PASSWORD```
+* push the image to dockerhub
+```
+docker tag <dockerhub_id>/nginx_doc:v1 <dockerhub_id>/nginx_doc:v1-new
+docker push <dockerhub_id>/nginx_doc:v1-new
+```
+* verify from Dockerhub registry
+<a href="https://hub.docker.com/repositories/">Dockerhub Repo</a>
+
+
+
+
