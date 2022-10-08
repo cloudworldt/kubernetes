@@ -111,3 +111,4 @@ docker ps
 docker stop nginx
 ```
 
+* create one folder and create Dockerfile and custom index file
