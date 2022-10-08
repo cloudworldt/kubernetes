@@ -1,0 +1,1 @@
+sed -i -e 's/nginx!/this docker session, i am your instructor - Rizwan/g' index.html
