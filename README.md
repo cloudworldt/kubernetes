@@ -90,3 +90,14 @@ docker ps -a
 ```
 docker rmi < image-id >
 ```
+
+### Docker Practical 2] : 
+
+a) create your own docker image\
+b) run as container\
+c) push to your Docker hub Registry 
+
+* Sign in to Docker Hub :  & create account
+<a href="https://hub.docker.com/">Docker Hub</a>
+
+
