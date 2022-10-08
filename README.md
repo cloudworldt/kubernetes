@@ -86,4 +86,7 @@ docker stop < container name >
 ```
 docker ps -a
 ```
-
+9. Remove Images
+```
+docker rmi < image-id >
+```
