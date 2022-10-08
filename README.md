@@ -112,3 +112,15 @@ docker stop nginx
 ```
 
 * create one folder and create Dockerfile and custom index file
+* build custom docker image and run the container
+```
+docker build -t <dockerhub_id>/nginx_doc:v1 .
+```
+* verify the image
+```
+docker images
+```
+* run the container 
+```
+docker run --name new_nginx -p 8081:80 -d <dockerhub_id>/nginx_doc:v1
+```
