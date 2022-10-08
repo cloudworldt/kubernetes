@@ -82,5 +82,8 @@ docker exec -it < container name > /bin/sh
 ```
 docker stop < container name >
 ```
-
+8. To Verify Stop Container Status & the container has been removed
+```
+docker ps -a
+```
 
