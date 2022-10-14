@@ -60,7 +60,7 @@
 8. Add the website data to the container by adding the following to the end of the file and save the file
    ```
    WORKDIR /usr/local/apache2/htdocs
-   COPY ./web .
+   COPY ./webdata .
    ```
 9. Build version 0.3 of the smarttech image
    ```
