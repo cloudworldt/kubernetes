@@ -33,7 +33,7 @@
 #### Load the Website into the Container
   
 1. Open the Dockerfile : ```vim Dockerfile```
-2. Remove the Apache welcome page from the image by adding the following and save the file
+2. Remove the Apache welcome page from the image by adding the following and save the file but before that check that path has been present or not  ```docker run --rm -it smarttech:0.1 bash```
    ```
    RUN rm -f /usr/local/apache2/htdocs/index.html
    ```
