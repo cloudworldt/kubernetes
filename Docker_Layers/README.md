@@ -37,3 +37,22 @@
    ```
    RUN rm -f /usr/local/apache2/htdocs/index.html
    ```
+3. Build version 0.2 of the widgetfactory image
+   ```
+   docker build -t smarttech:0.2 .
+   ```
+4. Inspect both versions of the smarttech image to see the differences in size and layers  
+   ```
+   docker images
+   docker inspect -f "$showSize" smarttech:0.1
+   docker inspect -f "$showSize" smarttech:0.2
+   
+   docker inspect -f "$showLayers" smarttech:0.1
+   docker inspect -f "$showLayers" smarttech:0.2
+   ```
+5. Using an interactive terminal, check the htdocs folder for smarttech:0.2. Are the website files in the folder?   
+   ```
+   docker run --rm -it smarttech:0.2 bash
+   ls htdocs
+   ```
+6. Exit the container : ```exit```   
