@@ -21,14 +21,14 @@
    ```docker images```
 7. Show the smarttech image's size
    ```
+   docker inspect -f "$showSize" httpd:2.4
    docker inspect -f "$showSize" smarttech:0.1
    ```
 8. Show the layers
    ```
+   docker inspect -f "$showLayers" httpd:2.4
    docker inspect -f "$showLayers" smarttech:0.1
    ```
-9. similarly verified image size and layers for ```httpd``` image and see the layers are same ?
-
 
 #### Load the Website into the Container
   
