@@ -55,4 +55,30 @@
    docker run --rm -it smarttech:0.2 bash
    ls htdocs
    ```
-6. Exit the container : ```exit```   
+6. Exit the container : ```exit``` 
+7. Open the Dockerfile ```vim Dockerfile```
+8. Add the website data to the container by adding the following to the end of the file and save the file
+   ```
+   WORKDIR /usr/local/apache2/htdocs
+   COPY ./web .
+   ```
+9. Build version 0.3 of the smarttech image
+   ```
+   docker build -t smarttech:0.3 .
+   ```
+10. Inspect versions 0.2 and 0.3 to see the differences in size and layers
+    ```
+    docker images
+    docker inspect -f "$showSize" smarttech:0.2
+    docker inspect -f "$showSize" smarttech:0.3
+    
+    docker inspect -f "$showLayers" smarttech:0.2
+    docker inspect -f "$showLayers" smarttech:0.3
+    ```
+11. Using an interactive terminal, check the htdocs folder for smarttech:0.3
+    ```
+    docker run --rm -it smarttech:0.3 bash
+    ```
+12. Are the web data files in the folder ? ```ls -l```   
+
+
