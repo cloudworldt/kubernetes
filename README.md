@@ -139,5 +139,15 @@ docker push <dockerhub_id>/nginx_doc:v1-new
 <a href="https://hub.docker.com/repositories/">Dockerhub Repo</a>
 
 
+##### To RUN static website in a container
 
+```
+docker run --name static-site -e AUTHOR="Your Name" -d -P dockersamples/static-site
+```
+
+if you want to specify perticular port 
+
+```
+docker run --name static-site-2 -e AUTHOR="Your Name" -d -p 8888:80 dockersamples/static-site
+```
 
