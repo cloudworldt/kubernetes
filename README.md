@@ -104,7 +104,7 @@ c) push to your Docker hub Registry
 ```
 docker run --name nginx -p 8080:80 -d nginx
 ```
-* exec the container and do change in webserver
+* exec the container and see the ```index.html``` file in given path ```/usr/share/nginx/html```
 ```
 docker ps
 ```
