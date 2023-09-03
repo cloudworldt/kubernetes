@@ -231,8 +231,6 @@ docker run --name python_test --link demo-postgres:postgres -ti my_image bash
 nano pg_test.py
 ```
 
-- to save the file use : ctrl + o + <enter> and for exist : ctrl + x
-
 ```sh
 """Test PostgreSQL connection."""
 import psycopg2
@@ -241,6 +239,7 @@ conn = psycopg2.connect(user='postgres')
 print(conn)
 ```
 * Save the file and exit the editor. Let’s see what happens when we try to connect to the database from our script. Execute the script in your container:
+* To save the file use : ctrl + o + ENTER and for exit : ctrl + x
 
 ```sh
 python3 pg_test.py
