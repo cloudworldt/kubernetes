@@ -374,7 +374,7 @@ delete the pod : ```kubectl delete po nginx```
 sudo -i
 ```
 ```
-bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/script/cluster-setup/master.sh)
+bash <(curl -s https://raw.githubusercontent.com/rizwan141/Docker-K8S/main/kubeadm/master.sh)
 ```
 
 ##  worker
@@ -382,7 +382,7 @@ bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/scrip
 sudo -i
 ```
 ```
-bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/script/cluster-setup/worker.sh)
+bash <(curl -s https://raw.githubusercontent.com/rizwan141/Docker-K8S/main/kubeadm/worker.sh)
 ```
 
 ##  run the printed kubeadm-join-command from the master on the worker
