@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 KUBE_VERSION=1.26.1
 
 
@@ -47,6 +48,7 @@ EOF
 
 ### install packages
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+mkdir -p /etc/apt/keyrings
 echo "deb [trusted=yes] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 apt-get --allow-unauthenticated update
 apt-get --allow-unauthenticated install -y docker.io containerd kubelet=${KUBE_VERSION}-00 kubeadm=${KUBE_VERSION}-00 kubectl=${KUBE_VERSION}-00 kubernetes-cni
@@ -141,26 +143,14 @@ systemctl restart containerd
 systemctl enable kubelet && systemctl start kubelet
 
 
+
 ### init k8s
-rm /root/.kube/config || true
-kubeadm init --kubernetes-version=${KUBE_VERSION} --ignore-preflight-errors=NumCPU --skip-token-print --pod-network-cidr 192.168.0.0/16
+kubeadm reset -f
+systemctl daemon-reload
+service kubelet start
 
-mkdir -p ~/.kube
-sudo cp -i /etc/kubernetes/admin.conf ~/.kube/config
-
-### CNI
-kubectl apply -f https://raw.githubusercontent.com/killer-sh/cks-course-environment/master/cluster-setup/calico.yaml
-
-
-# etcdctl
-ETCDCTL_VERSION=v3.5.1
-ETCDCTL_ARCH=$(dpkg --print-architecture)
-ETCDCTL_VERSION_FULL=etcd-${ETCDCTL_VERSION}-linux-${ETCDCTL_ARCH}
-wget https://github.com/etcd-io/etcd/releases/download/${ETCDCTL_VERSION}/${ETCDCTL_VERSION_FULL}.tar.gz
-tar xzf ${ETCDCTL_VERSION_FULL}.tar.gz ${ETCDCTL_VERSION_FULL}/etcdctl
-mv ${ETCDCTL_VERSION_FULL}/etcdctl /usr/bin/
-rm -rf ${ETCDCTL_VERSION_FULL} ${ETCDCTL_VERSION_FULL}.tar.gz
 
 echo
-echo "### COMMAND TO ADD A WORKER NODE ###"
-kubeadm token create --print-join-command --ttl 0
+echo "EXECUTE ON MASTER: kubeadm token create --print-join-command --ttl 0"
+echo "THEN RUN THE OUTPUT AS COMMAND HERE TO ADD AS WORKER"
+echo
