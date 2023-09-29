@@ -362,3 +362,30 @@ check core components and some other core pods : ```kubectl get all -n kube-syst
 check k8s resources api Versions : ```kubectl api-resources```
 
 delete the pod : ```kubectl delete po nginx```
+
+
+#######################################################################################################
+
+## Scripts : 
+
+# kubeadm script
+##  Controlplane
+```
+sudo -i
+```
+```
+bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/script/cluster-setup/master.sh)
+```
+
+##  worker
+```
+sudo -i
+```
+```
+bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/script/cluster-setup/worker.sh)
+```
+
+##  run the printed kubeadm-join-command from the master on the worker
+
+
+
