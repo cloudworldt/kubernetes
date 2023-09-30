@@ -134,3 +134,5 @@ spec:
       targetPort: 80 # container port
       nodePort: 30000 # node port
 ```      
+
+## Declarative docs : https://kubernetes.io/docs/home/
