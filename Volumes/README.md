@@ -8,9 +8,11 @@ In this session, we will take a look at **Volumes**
 - For example, We create a simple POD that generated a random between 1 and 100 and writes that to a file at `/opt/number.out`. To persist into the volume.
 - We create a volume for that. In this case I specify a path `/data` on the host. Files are stored in the directory data on my node. We use the volumeMounts field in each container to mount the data-volume to the directory `/opt` within the container. The random number will now be written to `/opt` mount inside the container, which happens to be on the data-volume which is in fact `/data` directory on the host. When the pod gets deleted, the file with the random number still lives on the host.
 
-<img width="353" alt="Screenshot 2023-07-01 at 11 01 53 PM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/9d217f80-d2d3-44b2-8690-790888214f10">
+<img width="353" alt="250296994-9d217f80-d2d3-44b2-8690-790888214f10" src="https://github.com/rizwan141/Docker-K8S/assets/103893307/e7b56354-0024-4a5e-93b6-b8baa6cc2fb9">
 
-<img width="931" alt="Screenshot 2023-07-01 at 11 02 48 PM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/01309ce2-bc40-4a0f-81fa-2cdd674a812f">
+
+<img width="931" alt="250297024-01309ce2-bc40-4a0f-81fa-2cdd674a812f" src="https://github.com/rizwan141/Docker-K8S/assets/103893307/5a041151-58ef-4b6f-8acb-a0dd09d31e15">
+
 
 
 ## Volume Storage Options
