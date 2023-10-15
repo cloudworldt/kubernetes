@@ -6,7 +6,7 @@ https://artifacthub.io/
 - The original goal of Helm was to provide users with a better way to manage all the Kubernetes YAML files we create on Kubernetes projects.
 - Helm Charts. Each chart is a bundle with one or more Kubernetes manifests
 - You just have to run a single command to install your entire application, instead of listing the files to install via kubectl
-<img width="1044" alt="Screenshot 2023-07-13 at 5 48 44 PM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/1df19c9e-981f-4795-900a-ca04e00b1541">
+<img width="1044" alt="253348126-1df19c9e-981f-4795-900a-ca04e00b1541" src="https://github.com/rizwan141/Docker-K8S/assets/103893307/8717d288-fd9e-4237-a817-51635cb9e7a4">
 
 - Charts allow you to version your manifest files too
 - Helm also keeps a release history of all deployed charts, so you can go back to a previous release if something went wrong
@@ -114,6 +114,6 @@ helm search repo bitnami/nginx.
 
 ## Helm Cheat Sheet
 
+![253354147-f018d164-73c3-4e80-a4dc-c80f9c0ba73c](https://github.com/rizwan141/Docker-K8S/assets/103893307/fbe40166-cf94-4397-bda4-2573c221be82)
 
-![Helm-cheat-sheet-by-PhoenixNAP_page-0001](https://github.com/rizwan141/KUBERNETES/assets/103893307/f018d164-73c3-4e80-a4dc-c80f9c0ba73c)
 
