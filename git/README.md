@@ -1,6 +1,6 @@
 # Before Git:
 
-![business](https://github.com/rizwan141/KUBERNETES/assets/103893307/ef4d6940-dec4-4f49-a15f-a6f59a350fce)
+![253569321-ef4d6940-dec4-4f49-a15f-a6f59a350fce](https://github.com/rizwan141/Docker-K8S/assets/103893307/0f1a2d2e-f5d1-4248-b434-cfdae4ddf23c)
 
 - Developers used to submit their codes to the central server without having copies of their own
 - Any changes made to the source code were unknown to the other developers
@@ -8,7 +8,8 @@
 
 # After Git:
 
-![business-org](https://github.com/rizwan141/KUBERNETES/assets/103893307/5ca81cb1-ed54-4d87-a04f-5a3643319edb)
+![253569626-5ca81cb1-ed54-4d87-a04f-5a3643319edb](https://github.com/rizwan141/Docker-K8S/assets/103893307/093eef52-bafd-4fe6-aaa0-45858e641397)
+
 
 - Every developer has an entire copy of the code on their local systems
 - Any changes made to the source code can be tracked by others
@@ -21,7 +22,7 @@
 
 Git is an open-source distributed version control system. It is designed to handle minor to major projects with high speed and efficiency. It is developed to co-ordinate the work among the developers. The version control allows us to track and work together with our team members at the same workspace.
 
-<img width="588" alt="Screenshot 2023-07-14 at 5 42 37 PM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/7802986b-2214-424b-b612-9e92e558c5c1">
+<img width="588" alt="253567205-7802986b-2214-424b-b612-9e92e558c5c1" src="https://github.com/rizwan141/Docker-K8S/assets/103893307/dfc5c193-f970-4097-a9f1-1d2a36ab8ef7">
 
 - Git is used to tracking changes in the source code
 - The distributed version control tool is used for source code management
@@ -132,7 +133,8 @@ push the changes in repo  ----->  git push origin master
 
 ### developer-1  will use Branching Strategy
 
-![155993572204-gitflow](https://github.com/rizwan141/KUBERNETES/assets/103893307/399b9105-898b-41e0-8960-b3544c2a4286)
+![253594313-399b9105-898b-41e0-8960-b3544c2a4286](https://github.com/rizwan141/Docker-K8S/assets/103893307/21145fa4-f444-4361-881d-a588d2696b3a)
+
 
 
 Branches are primarily used as a means for teams to develop features giving them a separate workspace for their code. These branches are usually merged back to a master branch upon completion of work. In this way, features (and any bug and bug fixes) are kept apart from each other allowing you to fix mistakes more easily.
