@@ -1,5 +1,4 @@
-# Docker : Documented By :- Rizwan
-
+# Docker :
 ### How to install Docker ?
 ##### Install Docker on Ubuntu : PROD
 ###### A. Set up the repository
