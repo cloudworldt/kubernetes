@@ -1,5 +1,4 @@
 ![download](https://user-images.githubusercontent.com/103893307/205317282-022b19ae-c81c-4fb5-aec6-b45e39e471ec.png)
-#### ~ By Rizwan Shaikh
 
 # Install kubernetes cluster using kubeadm tool
 #### Doc Ref : <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">Installing Kubeadm</a>
