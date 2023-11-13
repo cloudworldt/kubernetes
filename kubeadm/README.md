@@ -10,7 +10,7 @@
 5. Install kubeadm, kubelet and kubectl on both Nodes
 6. ports requirement 
 
-<img width="755" alt="ports" src="https://github.com/rizwan141/Docker-K8S/assets/103893307/01bff0d2-81e3-400e-9707-5f4bde892b3c">
+<img width="755" alt="ports" src="https://github.com/isakibshaikh1/Kubeadm/blob/main/kubeadm/266819568-01bff0d2-81e3-400e-9707-5f4bde892b3c.png">
 
 ### Steps :
 #### 1. Take 2 VM : Controlplane & Workernode
