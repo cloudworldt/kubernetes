@@ -3,7 +3,7 @@
 KUBE_VERSION=1.26.1
 
 
-### setup terminal
+### setup terminall
 apt-get --allow-unauthenticated update
 apt-get --allow-unauthenticated install -y bash-completion binutils
 echo 'colorscheme ron' >> ~/.vimrc
