@@ -53,7 +53,7 @@ git --version
 
 #### Set up global config variables - If you are working with other developers, you need to know who is checking the code in and out, and to make the changes.
 ```
-git config --global user.name "Sakeeb Shaikh"
+git config --global user.name "Github's username"
 
 git config --global user.email email 
 
