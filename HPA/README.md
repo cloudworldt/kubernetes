@@ -28,5 +28,12 @@ kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
 ```
 
 - This command creates an autoscaler that targets 50 percent CPU utilization for the deployment, with a minimum of one Pod and a maximum of ten Pods. When the average CPU load is lower than 50 percent, the autoscaler tries to reduce the number of Pods in the deployment, to a minimum of one. When the load is greater than 50 percent, the autoscaler tries to increase the number of Pods in the deployment, up to a maximum of ten. For more information, see
+ 
 - https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#how-does-a-horizontalpodautoscaler-work
+  
 - Describe the autoscaler with the following command to view its details.
+
+```
+kubectl get hpa
+
+```
