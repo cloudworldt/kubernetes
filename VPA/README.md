@@ -98,7 +98,7 @@ kubectl describe vpa/hamster-vpa
 ```
 - When you finish experimenting with the example application, you can delete it with the following command.
 ```
- kubectl delete -f autoscaler/vertical-pod-autoscaler/examples/hamster.yaml
+kubectl delete -f autoscaler/vertical-pod-autoscaler/examples/hamster.yaml
 ```
 # Known limitations
 - Whenever VPA updates the pod resources, the pod is recreated, which causes all running containers to be recreated. The pod may be recreated on a different node.
