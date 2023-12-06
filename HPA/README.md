@@ -48,3 +48,8 @@ kubectl run -i \
     --restart=Never \
     -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 ```
+
+- To watch the deployment scale out, periodically run the following command in a separate terminal from the terminal that you ran the previous step in.
+```
+  kubectl get hpa php-apache
+```
