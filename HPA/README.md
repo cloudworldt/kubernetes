@@ -10,3 +10,11 @@
 - https://docs.aws.amazon.com/eks/latest/userguide/metrics-server.html
 
 - You are using a kubectl client that is configured to communicate with your Amazon EKS cluster.
+
+# To test your Horizontal Pod Autoscaler installation
+Deploy a simple Apache web server application with the following command.
+
+```
+kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
+
+```
