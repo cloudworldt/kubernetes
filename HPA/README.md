@@ -24,7 +24,7 @@ kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
 - Create a Horizontal Pod Autoscaler resource for the php-apache deployment.
   
 ```
-  kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 ```
 
 - This command creates an autoscaler that targets 50 percent CPU utilization for the deployment, with a minimum of one Pod and a maximum of ten Pods. When the average CPU load is lower than 50 percent, the autoscaler tries to reduce the number of Pods in the deployment, to a minimum of one. When the load is greater than 50 percent, the autoscaler tries to increase the number of Pods in the deployment, up to a maximum of ten. For more information, see
@@ -51,7 +51,7 @@ kubectl run -i \
 
 - To watch the deployment scale out, periodically run the following command in a separate terminal from the terminal that you ran the previous step in.
 ```
-  kubectl get hpa php-apache
+kubectl get hpa php-apache
 ```
 # Note
 It may take a few minutes before you see the replica count reach its maximum. If only 6 replicas, for example, are necessary for the CPU load to remain at or under 50%, then the load won't scale beyond 6 replicas.
@@ -63,5 +63,5 @@ It may take a few minutes before you see the replica count reach its maximum. If
 
 -  When you are done experimenting with your sample application, delete the php-apache resources.
 ```
-  kubectl delete deployment.apps/php-apache service/php-apache horizontalpodautoscaler.autoscaling/php-apache
+kubectl delete deployment.apps/php-apache service/php-apache horizontalpodautoscaler.autoscaling/php-apache
 ```
