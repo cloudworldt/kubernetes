@@ -37,3 +37,14 @@ kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
 kubectl get hpa
 
 ```
+
+- As you can see, the current CPU load is 0%, because there's no load on the server yet. The Pod count is already at its lowest boundary (one), so it cannot scale in.
+
+ - Create a load for the web server by running a container.
+```
+kubectl run -i \
+    --tty load-generator \
+    --rm --image=busybox \
+    --restart=Never \
+    -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+```
