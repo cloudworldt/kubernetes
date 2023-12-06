@@ -15,17 +15,13 @@ The Kubernetes Vertical Pod Autoscaler automatically adjusts the CPU and memory 
 
 - More on the architecture can be found HERE. https://github.com/kubernetes/design-proposals-archive/blob/main/autoscaling/vertical-pod-autoscaler.md
 
-- Deploy the Vertical Pod Autoscaler
+# Deploy the Vertical Pod Autoscaler
 
-- In this section, you deploy the Vertical Pod Autoscaler to your cluster.
-
-- To deploy the Vertical Pod Autoscaler
-- Open a terminal window and navigate to a directory where you would like to download the Vertical Pod Autoscaler source code.
-
+- In this section, you deploy the Vertical Pod Autoscaler to your cluster. To deploy the Vertical Pod Autoscaler Open a terminal window and navigate to a directory where you would like to download the Vertical Pod Autoscaler source code.
 - Clone the kubernetes/autoscaler GitHub repository.
-  ```
-    git clone https://github.com/kubernetes/autoscaler.git
-  ```
+```
+  git clone https://github.com/kubernetes/autoscaler.git
+```
 Change to the vertical-pod-autoscaler directory.
 
  ```
