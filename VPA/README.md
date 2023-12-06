@@ -69,11 +69,15 @@ kubectl apply -f autoscaler/vertical-pod-autoscaler/examples/hamster.yaml
     kubectl describe pod hamster-c7d89d6db-rglf5
     ```
 
-- You can see that the original Pod reserves 100 millicpu of CPU and 50 mebibytes of memory. For this example application, 100 millicpu is less than the Pod needs to run, so it is CPU-constrained. It also reserves much less memory than it needs. The Vertical Pod Autoscaler vpa-recommender deployment analyzes the hamster Pods to see if the CPU and memory requirements are appropriate. If adjustments are needed, the vpa-updater relaunches the Pods with updated values.
+- You can see that the original Pod reserves 100 millicpu of CPU and 50 mebibytes of memory. For this example application, 100 millicpu is less than the Pod needs to run, 
+  so it is CPU-constrained. It also reserves much less memory than it needs. The Vertical Pod Autoscaler vpa-recommender deployment analyzes the hamster Pods to see if the 
+  CPU and memory requirements are appropriate. If adjustments are needed, the vpa-updater relaunches the Pods with updated values.
 
 - Wait for the vpa-updater to launch a new hamster Pod. This should take a minute or two. You can monitor the Pods with the following command.
 
-# Note If you are not sure that a new Pod has launched, compare the Pod names with your previous list. When the new Pod launches, you will see a new Pod name.
+# Note 
+
+- If you are not sure that a new Pod has launched, compare the Pod names with your previous list. When the new Pod launches, you will see a new Pod name.
 
 ```
 kubectl get --watch Pods -l app=hamster
@@ -84,7 +88,9 @@ kubectl get --watch Pods -l app=hamster
 kubectl describe pod hamster-c7d89d6db-jxgfv
 ```
 
-- In the previous output, you can see that the cpu reservation increased to 587 millicpu, which is over five times the original value. The memory increased to 262,144 Kilobytes, which is around 250 mebibytes, or five times the original value. This Pod was under-resourced, and the Vertical Pod Autoscaler corrected the estimate with a much more appropriate value.
+- In the previous output, you can see that the cpu reservation increased to 587 millicpu, which is over five times the original value. The memory increased to 262,144 
+  Kilobytes, which is around 250 mebibytes, or five times the original value. This Pod was under-resourced, and the Vertical Pod Autoscaler corrected the estimate with a 
+  much more appropriate value.
 
 - Describe the hamster-vpa resource to view the new recommendation.
 ```
@@ -94,5 +100,14 @@ kubectl describe vpa/hamster-vpa
 ```
  kubectl delete -f autoscaler/vertical-pod-autoscaler/examples/hamster.yaml
 ```
-
+# Known limitations
+Whenever VPA updates the pod resources, the pod is recreated, which causes all running containers to be recreated. The pod may be recreated on a different node.
+VPA cannot guarantee that pods it evicts or deletes to apply recommendations (when configured in Auto and Recreate modes) will be successfully recreated. This can be partly addressed by using VPA together with Cluster Autoscaler.
+VPA does not update resources of pods which are not run under a controller.
+Vertical Pod Autoscaler should not be used with the Horizontal Pod Autoscaler (HPA) on CPU or memory at this moment. However, you can use VPA with HPA on custom and external metrics.
+The VPA admission controller is an admission webhook. If you add other admission webhooks to your cluster, it is important to analyze how they interact and whether they may conflict with each other. The order of admission controllers is defined by a flag on API server.
+VPA reacts to most out-of-memory events, but not in all situations.
+VPA performance has not been tested in large clusters.
+VPA recommendation might exceed available resources (e.g. Node size, available size, available quota) and cause pods to go pending. This can be partly addressed by using VPA together with Cluster Autoscaler.
+Multiple VPA resources matching the same pod have undefined behavior.
 
