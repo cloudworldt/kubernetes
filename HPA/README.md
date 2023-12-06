@@ -7,5 +7,6 @@
 - You have an existing Amazon EKS cluster. If you don't, see Getting started with Amazon EKS.
 
 - You have the Kubernetes Metrics Server installed. For more information, see Installing the Kubernetes Metrics Server.
+- https://docs.aws.amazon.com/eks/latest/userguide/metrics-server.html
 
 - You are using a kubectl client that is configured to communicate with your Amazon EKS cluster.
