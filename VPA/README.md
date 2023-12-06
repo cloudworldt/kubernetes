@@ -18,3 +18,9 @@ Change to the vertical-pod-autoscaler directory.
   cd autoscaler/vertical-pod-autoscaler/
 
  ```
+(Optional) If you have already deployed another version of the Vertical Pod Autoscaler, remove it with the following command.
+
+```
+./hack/vpa-down.sh
+
+```
