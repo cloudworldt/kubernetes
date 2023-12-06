@@ -12,3 +12,9 @@ The Kubernetes Vertical Pod Autoscaler automatically adjusts the CPU and memory 
   ```
     git clone https://github.com/kubernetes/autoscaler.git
   ```
+Change to the vertical-pod-autoscaler directory.
+
+ ```
+  cd autoscaler/vertical-pod-autoscaler/
+
+ ```
