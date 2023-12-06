@@ -18,3 +18,11 @@ Deploy a simple Apache web server application with the following command.
 kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
 
 ```
+
+- This Apache web server Pod is given a 500 millicpu CPU limit and it is serving on port 80.
+
+- Create a Horizontal Pod Autoscaler resource for the php-apache deployment.
+  
+```
+  kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+```
