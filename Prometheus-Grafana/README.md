@@ -50,4 +50,42 @@ kubectl get all -n monitoring
 ```  
 kubectl get pvc -n monitoring
 ```
+- Open prometheus in browser with LB DNS
+http://a0ddb207885584297b8f3f1a930b1254-1286264633.us-east-1.elb.amazonaws.com/
 
+- View the metrics
+http://a0ddb207885584297b8f3f1a930b1254-1286264633.us-east-1.elb.amazonaws.com/metrics
+
+
+
+# Grafana Installation:
+
+```
+helm repo add grafana https://grafana.github.io/helm-charts
+```
+```
+helm search repo grafana
+```
+
+```
+helm pull grafana/grafana
+```
+tar -xvf grafana-7.0.11.tgz
+```
+- Change Service Type from ClusterIp to LoadBalancer
+```
+cd grafana
+vi values.yaml
+```
+- Install helm chart
+```
+helm install grafana -f values.yaml -n monitoring .
+```
+- Validate by below command
+```
+kubectl get all -n monitoring
+```
+
+```
+kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
