@@ -44,6 +44,8 @@ helm install prom -f values.yaml -n monitoring .
 ```
 - Validate by below command
 ```
-kubectl get all -n monitoring
+- kubectl get all -n monitoring
+```
+kubectl get pvc -n monitoring
 ```
 
