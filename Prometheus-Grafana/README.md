@@ -1,0 +1,22 @@
+# Prometheus Installation:
+
+- Prerequisites - Install heml
+
+```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+
+- Check Helm version
+```
+helm version
+```
+- Once Helm is set up properly, add the repository as follows:
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+- You can then run below command to see the charts.
+```
+helm search repo prometheus-community
+``` 
