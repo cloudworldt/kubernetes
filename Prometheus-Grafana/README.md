@@ -70,6 +70,7 @@ helm search repo grafana
 ```
 helm pull grafana/grafana
 ```
+```
 tar -xvf grafana-7.0.11.tgz
 ```
 - Change Service Type from ClusterIp to LoadBalancer
