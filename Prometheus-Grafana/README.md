@@ -50,12 +50,14 @@ kubectl get all -n monitoring
 ```  
 kubectl get pvc -n monitoring
 ```
-- Open prometheus in browser with LB DNS
+- Open prometheus in browser with LB DNS (Replace your DNS from AWS console)
+```
 http://a0ddb207885584297b8f3f1a930b1254-1286264633.us-east-1.elb.amazonaws.com/
-
+```
 - View the metrics
+```
 http://a0ddb207885584297b8f3f1a930b1254-1286264633.us-east-1.elb.amazonaws.com/metrics
-
+```
 
 
 # Grafana Installation:
