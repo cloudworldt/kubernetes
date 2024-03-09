@@ -144,7 +144,8 @@ sudo apt-get install -y apt-transport-https ca-certificates curl
 ```
 Download the Google Cloud public signing key:
 ```
-curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.25/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
 ```
 
 if face an issue execute this : 
@@ -152,11 +153,12 @@ if face an issue execute this :
 sudo mkdir -p /etc/apt/keyrings/
 ```
 ```
-curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.25/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 ```
 Add the Kubernetes ```apt``` repository using the following command:
 ```
-echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.25/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
 ```
 Update the ```apt``` package index and install ```kubeadm```, ```kubelet```, and ```kubectl``` on each node by running the following command:
 ```
@@ -168,9 +170,9 @@ The last line with the ```apt-mark hold``` command is optional, but highly recom
 ```
 sudo apt-mark unhold kubelet kubeadm kubectl
 ```
-##### NOTE : In production environments, it’s common to deploy a specific version of Kubernetes that has already been tested instead of the most recent one. For example, to install version 1.23.1, you can use the following command:
+##### NOTE : In production environments, it’s common to deploy a specific version of Kubernetes that has already been tested instead of the most recent one. For example, to install version 1.25.0-00, you can use the following command:
 ```
-sudo apt install -y kubelet=1.23.1-00 kubectl=1.23.1-00 kubeadm=1.23.1-00 --allow-downgrades
+sudo apt install -y kubelet=1.25.0-00 kubectl=1.25.0-00 kubeadm=1.25.0-00 --allow-downgrades
 ```
 
 #### 7. Check the version of kubeadm, kubelet & kubectl installed
