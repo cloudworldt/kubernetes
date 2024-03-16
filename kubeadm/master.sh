@@ -1,9 +1,25 @@
 #!/bin/sh
 
-KUBE_VERSION=1.26.1
+# Source: http://kubernetes.io/docs/getting-started-guides/kubeadm
+
+set -e
+
+source /etc/lsb-release
+if [ "$DISTRIB_RELEASE" != "20.04" ]; then
+    echo "################################# "
+    echo "############ WARNING ############ "
+    echo "################################# "
+    echo
+    echo "This script only works on Ubuntu 20.04!"
+    echo "You're using: ${DISTRIB_DESCRIPTION}"
+    echo "Better ABORT with Ctrl+C. Or press any key to continue the install"
+    read
+fi
+
+KUBE_VERSION=1.29.2
 
 
-### setup terminall
+### setup terminal
 apt-get --allow-unauthenticated update
 apt-get --allow-unauthenticated install -y bash-completion binutils
 echo 'colorscheme ron' >> ~/.vimrc
@@ -34,8 +50,8 @@ systemctl daemon-reload
 
 ### install podman
 . /etc/os-release
-echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:testing.list
-curl -L "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/Release.key" | sudo apt-key add -
+echo "deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:testing.list
+curl -L "http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/Release.key" | sudo apt-key add -
 apt-get update -qq
 apt-get -qq -y install podman cri-tools containers-common
 rm /etc/apt/sources.list.d/devel:kubic:libcontainers:testing.list
@@ -46,10 +62,20 @@ EOF
 
 
 ### install packages
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-echo "deb [trusted=yes] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+apt-get install -y apt-transport-https ca-certificates
+mkdir -p /etc/apt/keyrings
+rm /etc/apt/keyrings/kubernetes-1-27-apt-keyring.gpg || true
+rm /etc/apt/keyrings/kubernetes-1-28-apt-keyring.gpg || true
+rm /etc/apt/keyrings/kubernetes-1-29-apt-keyring.gpg || true
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.27/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-1-27-apt-keyring.gpg
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-1-28-apt-keyring.gpg
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-1-29-apt-keyring.gpg
+echo > /etc/apt/sources.list.d/kubernetes.list
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-1-27-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.27/deb/ /" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-1-28-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-1-29-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 apt-get --allow-unauthenticated update
-apt-get --allow-unauthenticated install -y docker.io containerd kubelet=${KUBE_VERSION}-00 kubeadm=${KUBE_VERSION}-00 kubectl=${KUBE_VERSION}-00 kubernetes-cni
+apt-get --allow-unauthenticated install -y docker.io containerd kubelet=${KUBE_VERSION}-1.1 kubeadm=${KUBE_VERSION}-1.1 kubectl=${KUBE_VERSION}-1.1 kubernetes-cni
 apt-mark hold kubelet kubeadm kubectl kubernetes-cni
 
 
@@ -128,7 +154,7 @@ EOF
 ### kubelet should use containerd
 {
 cat <<EOF | sudo tee /etc/default/kubelet
-KUBELET_EXTRA_ARGS="--container-runtime remote --container-runtime-endpoint unix:///run/containerd/containerd.sock"
+KUBELET_EXTRA_ARGS="--container-runtime-endpoint unix:///run/containerd/containerd.sock"
 EOF
 }
 
