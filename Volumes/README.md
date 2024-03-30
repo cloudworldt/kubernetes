@@ -171,7 +171,7 @@ spec:
     capacity:
      storage: 1Gi
     hostPath:
-     path: /home/ubuntu/tmp/data
+     path: /home/ubuntu/data/tmp
 ```
 
 ### pvc.yaml
