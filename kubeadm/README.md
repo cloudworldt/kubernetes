@@ -376,8 +376,6 @@ sudo -i
 ```
 ```
 bash <(curl -s https://raw.githubusercontent.com/cloudworldt/kubernetes/main/kubeadm/master.sh)
-
-blob/main/kubeadm/master.sh
 ```
 
 ##  worker
