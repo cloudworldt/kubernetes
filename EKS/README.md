@@ -25,7 +25,7 @@ eksctl utils associate-iam-oidc-provider \
 # Install-EBS-CSI-Driver
 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html 
 
-https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi.html
+https://docs.aws.amazon.com/eks/latest/userguide/creating-an-add-on.html
 
 
 # EKS Storage -  Storage Classes, Persistent Volume Claims
