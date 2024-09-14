@@ -22,4 +22,4 @@ sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 echo -e "plain \e[0;31mEKSCTL is  installed \e[0m reset"
 aws configure
-eksctl create cluster --name eksdemo --version 1.23 --region us-east-1 --nodegroup-name eksdemo-ng --node-type t3.medium --nodes 4 --managed
+eksctl create cluster --name eksdemo --version 1.29 --region us-east-1 --nodegroup-name eksdemo-ng --node-type t3.medium --nodes 4 --managed
